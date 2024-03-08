@@ -23,7 +23,7 @@ def startDownload():
 
 
 @app.route('/data')
-def hello_world():
+def getData():
     return {'data': dataWasted}
 
 
