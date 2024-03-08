@@ -13,10 +13,12 @@ function StartWaste() {
     console.log("starting download")
     fetch('/start').then(res => {
         console.log("complete download")
+
     })
 
     fetch('/data').then(res => {
         res.json().then(val =>{
+            console.log(val)
             var dataWastedValue = val['data']
             dataWasted.innerText = `Data Wasted: ${data/1024} MB`
         })
