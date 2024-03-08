@@ -10,21 +10,33 @@ function update_meter(value) {
 
 
 function StartWaste() {
-    console.log("starting download")
-    fetch('/start').then(res => {
-        console.log("complete download")
+    // Create a new instance of XMLHttpRequest
+    var xhr = new XMLHttpRequest();
 
-    })
+    // Define the request method and URL
+    xhr.open('GET', 'https://dl.google.com/go/go1.22.1.windows-amd64.msi', true);
 
-    setInterval(() => {
-        fetch('/data').then(res => {
-            res.json().then(val => {
-                console.log(val)
-                var dataWastedValue = val['data']
-                dataWasted.innerText = `Data Wasted: ${dataWastedValue / 1024} MB`
-            })
-        })
-    }, 1000)
+    // Set up a function to handle the response
+    xhr.onreadystatechange = function () {
+        // Check if the request is complete
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            // Check if the request was successful
+            if (xhr.status === 200) {
+                // Parse the response data
+                var responseData = xhr.responseText;
+
+                // Do something with the response data
+                // console.log(xhr.response);
+            } else {
+                // If the request was not successful, handle the error
+                console.error('Request failed: ' + xhr.status);
+            }
+        }
+    };
+
+    // Send the request
+    xhr.send();
+
 
 }
 
