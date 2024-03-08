@@ -17,10 +17,10 @@ function StartWaste() {
     })
 
     fetch('/data').then(res => {
-        res.json().then(val =>{
+        res.json().then(val => {
             console.log(val)
             var dataWastedValue = val['data']
-            dataWasted.innerText = `Data Wasted: ${data/1024} MB`
+            dataWasted.innerText = `Data Wasted: ${data / 1024} MB`
         })
     })
 
