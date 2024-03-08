@@ -20,7 +20,7 @@ function StartWaste() {
         res.json().then(val => {
             console.log(val)
             var dataWastedValue = val['data']
-            dataWasted.innerText = `Data Wasted: ${data / 1024} MB`
+            dataWasted.innerText = `Data Wasted: ${dataWastedValue / 1024} MB`
         })
     })
 
