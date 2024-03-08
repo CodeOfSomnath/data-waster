@@ -20,7 +20,7 @@ def startDownload():
         dataWasted = dataWasted + 1024
     
     res.close()
-    return {"test": 1}
+    return "working"
 
 
 @app.route('/data')
