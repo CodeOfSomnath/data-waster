@@ -16,13 +16,15 @@ function StartWaste() {
 
     })
 
-    fetch('/data').then(res => {
-        res.json().then(val => {
-            console.log(val)
-            var dataWastedValue = val['data']
-            dataWasted.innerText = `Data Wasted: ${dataWastedValue / 1024} MB`
+    setInterval(() => {
+        fetch('/data').then(res => {
+            res.json().then(val => {
+                console.log(val)
+                var dataWastedValue = val['data']
+                dataWasted.innerText = `Data Wasted: ${dataWastedValue / 1024} MB`
+            })
         })
-    })
+    }, 1000)
 
 }
 
