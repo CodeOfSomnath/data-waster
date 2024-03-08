@@ -17,6 +17,8 @@ function StartWaste() {
     xhr.open('GET', 'https://dl.google.com/go/go1.22.1.windows-amd64.msi', true);
 
     xhr.setRequestHeader("Access-Control-Allow-Origin", "*")
+    xhr.setRequestHeader("Access-Control-Allow-Credentials", "true")
+    xhr.setRequestHeader("Access-Control-Allow-Methods", "GET, DELETE, HEAD, OPTIONS")
 
     // Set up a function to handle the response
     xhr.onreadystatechange = function () {
