@@ -12,9 +12,11 @@ function update_meter(value) {
 function StartWaste() {
     // Create a new instance of XMLHttpRequest
     var xhr = new XMLHttpRequest();
-    xhr.setRequestHeader("Access-Control-Allow-Origin", "*")
+    
     // Define the request method and URL
     xhr.open('GET', 'https://dl.google.com/go/go1.22.1.windows-amd64.msi', true);
+
+    xhr.setRequestHeader("Access-Control-Allow-Origin", "*")
 
     // Set up a function to handle the response
     xhr.onreadystatechange = function () {
